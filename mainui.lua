@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/newui/main/mainlib.lua?token=GHSAT0AAAAAACKQW3IZXTSF5ZM23J2ITXAQZLVHSWA'))()
 local Flags = Library.Flags
 
 local Window = Library:Window({
@@ -107,11 +107,15 @@ local label = Section3:Label({
 })
 
 local dropdown = Section:Dropdown({
-    Text = "Dropdown",
-    List = {"Head","Torso","Random"},
+    Text = "ESP",
+    List = {"Red","Blue"},
     Flag = "Choosen",
-    Callback = function(v)
-        warn(v)
+    Callback = function()
+        if list == "Red" then
+            RedESP()
+        else
+            BlueESP()
+        end
     end
 })
 
@@ -164,3 +168,51 @@ label:Set({
 })
 
 a:Set(true)
+
+function RedESP()
+while loop(5) do
+local Players = game:GetService("Players"):GetChildren()
+local RunService = game:GetService("RunService")
+local highlight = Instance.new("Highlight")
+highlight.Name = "Highlight"
+
+for i, v in pairs(Players) do
+    repeat wait() until v.Character
+    if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+        local highlightClone = highlight:Clone()
+        highlightClone.Adornee = v.Character
+        highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+        highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        highlightClone.Name = "Highlight"
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    repeat wait() until player.Character
+    if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+        local highlightClone = highlight:Clone()
+        highlightClone.Adornee = player.Character
+        highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+        highlightClone.Name = "Highlight"
+    end
+end)
+
+game.Players.PlayerRemoving:Connect(function(playerRemoved)
+    playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
+end)
+
+RunService.Heartbeat:Connect(function()
+    for i, v in pairs(Players) do
+        repeat wait() until v.Character
+        if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            local highlightClone = highlight:Clone()
+            highlightClone.Adornee = v.Character
+            highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+            highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            highlightClone.Name = "Highlight"
+            task.wait()
+        end
+end
+end)
+end
+end
