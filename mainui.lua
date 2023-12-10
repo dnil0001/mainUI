@@ -1,6 +1,11 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
 
+function test()
+    print("test")
+end
+
+
 local Window = Library:Window({
     Text = "Syntax"
 })
@@ -218,8 +223,4 @@ RunService.Heartbeat:Connect(function()
 end
 end)
 end
-end
-
-function test()
-    print("test")
 end
