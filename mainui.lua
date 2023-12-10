@@ -113,10 +113,9 @@ local dropdown = Section:Dropdown({
     Text = "ESP",
     List = {"Red","Blue"},
     Flag = "Choosen",
-    Callback = function()
-        if list == "Red" then
+    Callback = function() RedESP()
+        if dropdown == "Red" then
             RedESP()
-            loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
             print("works")
         end
     end
