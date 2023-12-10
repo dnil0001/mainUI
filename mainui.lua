@@ -113,8 +113,10 @@ local dropdown = Section:Dropdown({
     Callback = function()
         if list == "Red" then
             RedESP()
+            print("works")
         else
             BlueESP()
+            print("works")
         end
     end
 })
