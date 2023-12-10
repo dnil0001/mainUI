@@ -33,19 +33,19 @@ local Section3 = Tab:Section({
 ChamsSection:Toggle({
     Text = "Enabled",
     print("Works"),
-    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
+    RedESP()
 })
 
 ChamsSection:Toggle({
     Text = "Color",
     print("Works"),
-    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
+    RedESP()
 })
 
 ChamsSection:Toggle({
     Text = "Filled",
     print("Works"),
-    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
+    RedESP()
 })
 
 ChamsSection:Toggle({
@@ -116,10 +116,6 @@ local dropdown = Section:Dropdown({
     Callback = function()
         if list == "Red" then
             RedESP()
-            loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
-            print("works")
-        else
-            BlueESP()
             loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
             print("works")
         end
