@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/newui/main/mainlib.lua?token=GHSAT0AAAAAACKQW3IZXTSF5ZM23J2ITXAQZLVHSWA'))()
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
 
 local Window = Library:Window({
