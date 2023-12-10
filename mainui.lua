@@ -1,11 +1,6 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
 
-function test()
-    print("test")
-end
-
-
 local Window = Library:Window({
     Text = "Syntax"
 })
@@ -38,17 +33,19 @@ local Section3 = Tab:Section({
 ChamsSection:Toggle({
     Text = "Enabled",
     print("Works"),
-        test()
+    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
 })
 
 ChamsSection:Toggle({
     Text = "Color",
-    print("Works")
+    print("Works"),
+    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
 })
 
 ChamsSection:Toggle({
     Text = "Filled",
-    print("Works")
+    print("Works"),
+    loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
 })
 
 ChamsSection:Toggle({
@@ -119,9 +116,11 @@ local dropdown = Section:Dropdown({
     Callback = function()
         if list == "Red" then
             RedESP()
+            loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
             print("works")
         else
             BlueESP()
+            loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
             print("works")
         end
     end
