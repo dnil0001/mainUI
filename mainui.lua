@@ -32,7 +32,7 @@ local Section3 = Tab:Section({
 
 ChamsSection:Toggle({
     Text = "Enabled",
-    print("Works")
+    print("Works"),
         test()
 })
 
