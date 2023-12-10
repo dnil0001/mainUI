@@ -33,6 +33,7 @@ local Section3 = Tab:Section({
 ChamsSection:Toggle({
     Text = "Enabled",
     print("Works")
+        test()
 })
 
 ChamsSection:Toggle({
@@ -217,4 +218,8 @@ RunService.Heartbeat:Connect(function()
 end
 end)
 end
+end
+
+function test()
+    print("test")
 end
